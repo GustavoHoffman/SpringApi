@@ -8,6 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+import java.util.Optional;
+
 @RestController
 @RequestMapping("medicos")
 public class MedicoController {
@@ -20,12 +23,12 @@ public class MedicoController {
     }
 
     @GetMapping
-    public String getMedico(){
-        return "Hello Spring!!!";
+    public List<Medico> listarMedicos(){
+      return  repository.findAll();
     }
 
-    @PutMapping
-    public String editar(){
-        return "Hello Spring!!!";
+    @GetMapping("/{id}")
+    public Optional<Medico> listarMedicoPorId(@PathVariable Long id){
+        return repository.findById(id);
     }
 }
