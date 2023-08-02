@@ -30,7 +30,7 @@ public class MedicoController {
 
     @GetMapping("/{id}")
     public Optional<Medico> listarMedicoPorId(@PathVariable Long id){
-        System.out.println("teste");
+        System.out.println("2");
 
         return repository.findById(id);
     }
