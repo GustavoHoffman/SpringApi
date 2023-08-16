@@ -34,6 +34,7 @@ public class Medico {
         this.ativo = true;
     }
 
+
     public void editar(DadosEdicaoMedico dados) {
         if(dados.nome() != null){
             this.nome = dados.nome();
